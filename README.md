@@ -1,24 +1,30 @@
-# README
+DragonHall Portal
+=================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository contains the basic source of the new DragonHall+ Portal Engine
 
-Things you may want to cover:
+Development Setup
+-----------------
 
-* Ruby version
+```
+git clone https://github.com/dragonhall/portal.git dhportal
+rvm install ruby-2.5.0
+rvm use --create ruby-2.5.0@dhportal
+cd dhportal
+bundle install
+```
 
-* System dependencies
+Then create a database, setup credentials in `config/database.yml` 
+(see the example in `config/database.yml.sample`).
 
-* Configuration
+**Important:** To test import functions correctly, you have to have a correctly
+set up `dragonhall` database too! Also, be sure if `dhportal` user has at least 
+**USE and SELECT** grant on it!
 
-* Database creation
+```
+rake db:setup # this configures the development database
+rake db:seed # note: this will check the 'dragonhall' database too but don't break if not present
+guard -i # or
+foreman start
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
