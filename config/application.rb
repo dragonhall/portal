@@ -14,5 +14,41 @@ module DHPortal
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    
+    config.time_zone = 'Budapest'
+    
+    config.autoload_paths << Rails.root.join('lib')
+    config.autoload_paths << Rails.root.join('app/inputs')
+    config.autoload_paths << Rails.root.join('app/serializers')
+
+    config.log_formatter = ::Logger::Formatter.new
+
+    config.i18n.default_locale = :hu
+
+    if config.respond_to? :rack_dev_mark
+      config.rack_dev_mark.enable = !Rails.env.production?
+      config.rack_dev_mark.env =
+        "#{Rails.env} (#{Showtime::Version.version(Rails.root)})"
+    end
+
+    
+    config.active_job.queue_adapter = :resque
+
+    config.generators do |generators|
+      unless Rails.env.production? then
+        generators.test_framework :rspec,
+                                  view_specs: false,
+                                  helper_specs: false,
+                                  routing_specs: false,
+                                  request_specs: false,
+                                  fixtures: true
+        generators.integration_tool :rspec
+        generators.fixture_replacement :factory_girl, dir: 'spec/factories'
+      end
+
+      generators.stylesheets :scss
+      generators.template_engine :haml
+      generators.system_tests = nil
+    end
   end
 end
