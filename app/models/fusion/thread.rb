@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Fusion::Thread < ApplicationRecord
   extend Fusion
 

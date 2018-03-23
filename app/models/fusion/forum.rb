@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Fusion::Forum < ApplicationRecord
   extend Fusion
 
@@ -10,10 +12,9 @@ class Fusion::Forum < ApplicationRecord
   has_many :posts
   has_many :threads
 
-  scope :toplevels, -> { where(:forum_cat => 0) }
+  scope :toplevels, -> { where(forum_cat: 0) }
 
   def toplevel?
-    self.forum_cat == 0
+    forum_cat == 0
   end
-
 end
