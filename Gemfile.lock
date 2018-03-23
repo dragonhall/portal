@@ -120,10 +120,10 @@ GEM
     et-orbi (1.0.9)
       tzinfo
     execjs (2.7.0)
-    factory_girl (4.9.0)
+    factory_bot (4.8.2)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.9.0)
-      factory_girl (~> 4.9.0)
+    factory_bot_rails (4.8.2)
+      factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
     ffi (1.9.23)
     font-awesome-sass (5.0.6.2)
@@ -458,7 +458,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   consul
   devise
-  factory_girl_rails
+  factory_bot_rails
   foreman
   fuubar
   geoip

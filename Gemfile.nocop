@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-ENV['RUBY_DEP_GEM_SILENCE_WARNINGS'] = '1' if `hostname -s`.strip == 'darkstar'
+ENV['RUBY_DEP_GEM_SILENCE_WARNINGS'] = '1' if %x(hostname -s).strip == 'darkstar'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
@@ -35,8 +35,8 @@ gem 'puma', '3.8.2'
 group :assets do
   gem 'coffee-rails', '~> 4.2'
   gem 'jbuilder', '~> 2.5'
-  # gem 'jqtools-rails'
-  # gem 'jquery-easing-rails'
+  #gem 'jqtools-rails'
+  #gem 'jquery-easing-rails'
   gem 'jquery-rails'
   gem 'jquery-ui-rails'
   gem 'sass-rails', '~> 5.0'
@@ -54,11 +54,11 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 
-  gem 'capistrano-foreman'
   gem 'capistrano-linked-files'
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
   gem 'capistrano3-puma'
+  gem 'capistrano-foreman'
 
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'meta_request'
@@ -117,7 +117,7 @@ group :application do
   gem 'rollbar'
   gem 'simple_form'
 
-  # gem 'streamio-ffmpeg', github: 'streamio/streamio-ffmpeg', branch: :master
+  #gem 'streamio-ffmpeg', github: 'streamio/streamio-ffmpeg', branch: :master
 
   # gem 'blueprint-rails', path: '/home/hron/Projects/contrib/blueprint-rails'
 
