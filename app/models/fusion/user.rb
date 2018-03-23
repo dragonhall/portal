@@ -7,6 +7,8 @@ class Fusion::User < ApplicationRecord
 
   self.primary_key = :user_id
 
+  has_many :forum_posts, class_name: 'Fusion::Post', foreign_key: 'post_author'
+
   def avatar_url
     avatar_file = user_avatar.empty? ? DEFAULT_AVATAR : "/images/avatars/#{user_avatar}"
     "#{FUSION_URL}#{avatar_file}"
