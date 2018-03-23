@@ -9,6 +9,16 @@ require 'rails/all'
 Bundler.require(*Rails.groups, :application)
 
 module DHPortal
+  class Version
+    def self.version(root_path)
+      @@version ||= if File.exist?("#{root_path}/REVISION")
+                      File.read("#{root_path}/REVISION")
+                    else
+                      `cd #{root_path} && git rev-parse HEAD`.chomp
+                    end[0..6]
+    end
+  end
+
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
