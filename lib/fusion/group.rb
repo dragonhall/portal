@@ -1,5 +1,5 @@
 class Fusion::Group < ApplicationRecord
-  extend Fusion
+  extend Fusion::Base
 
   establish_connection :dragonhall
 

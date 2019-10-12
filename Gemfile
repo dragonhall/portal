@@ -25,10 +25,22 @@ def guard(plugins = {})
   end
 end
 
-gem 'mysql2', '>= 0.3.18', '< 0.5'
+def omniauth(plugins = {})
+  gem 'omniauth'
+  plugins.each_pair do |name, version|
+    if version == :latest
+      gem "omniauth-#{name}"
+    else
+      gem "omniauth-#{name}", version
+    end
+  end
+end
+
+gem 'mysql2'
+gem 'pg'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.0'
+gem 'rails', '~> 6.0.0'
 
 gem 'puma', '3.8.2'
 
@@ -45,6 +57,8 @@ end
 
 group :development, :test do
   gem 'byebug'
+  gem 'faker'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -81,7 +95,6 @@ group :development do
 end
 
 group :test do
-  gem 'factory_girl_rails'
   gem 'fuubar'
   gem 'rspec-rails'
   gem 'rubocop'
@@ -97,6 +110,9 @@ group :application do
   gem 'carrierwave'
   gem 'consul'
   gem 'devise' # , github: 'plataformatec/devise'
+  omniauth facebook: :latest, 
+           twitter: :latest
+
   gem 'haml-rails'
   gem 'inherited_resources'
   gem 'kaminari'
