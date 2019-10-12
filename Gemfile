@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-ENV['RUBY_DEP_GEM_SILENCE_WARNINGS'] = '1' if %x(hostname -s).strip == 'darkstar'
+ENV['RUBY_DEP_GEM_SILENCE_WARNINGS'] = '1' if `hostname -s`.strip == 'darkstar'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
@@ -45,20 +45,24 @@ gem 'rails', '~> 6.0.0'
 gem 'puma', '3.8.2'
 
 group :assets do
-  gem 'coffee-rails', '~> 4.2'
+  # gem 'coffee-rails', '~> 4.2'
   gem 'jbuilder', '~> 2.5'
-  #gem 'jqtools-rails'
-  #gem 'jquery-easing-rails'
-  gem 'jquery-rails'
-  gem 'jquery-ui-rails'
-  gem 'sass-rails', '~> 5.0'
+  # gem 'jquery-rails'
+  # gem 'jquery-ui-rails'
+  # gem 'sass-rails', '~> 5.0'
   gem 'uglifier', '>= 1.3.0'
+  gem 'webpacker'
 end
 
 group :development, :test do
   gem 'byebug'
-  gem 'faker'
   gem 'factory_bot_rails'
+  gem 'faker'
+
+  gem 'rubocop'
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
 end
 
 group :development do
@@ -68,11 +72,11 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 
+  gem 'capistrano-foreman'
   gem 'capistrano-linked-files'
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
   gem 'capistrano3-puma'
-  gem 'capistrano-foreman'
 
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'meta_request'
@@ -97,12 +101,11 @@ end
 group :test do
   gem 'fuubar'
   gem 'rspec-rails'
-  gem 'rubocop'
   gem 'simplecov'
 end
 
 group :application do
-  #gem 'active_scheduler'
+  # gem 'active_scheduler'
   gem 'pry-rails'
 
   gem 'foreman'
@@ -110,7 +113,7 @@ group :application do
   gem 'carrierwave'
   gem 'consul'
   gem 'devise' # , github: 'plataformatec/devise'
-  omniauth facebook: :latest, 
+  omniauth facebook: :latest,
            twitter: :latest
 
   gem 'haml-rails'
@@ -125,19 +128,19 @@ group :application do
 
   gem 'resque'
   gem 'resque-scheduler'
-  gem 'resque-scheduler-web'
+  gem 'resque-scheduler-web', require: false
   gem 'resque-status'
-  gem 'resque-status-web'
-  gem 'resque-web', require: 'resque_web'
+  gem 'resque-status-web', require: false
+  gem 'resque-web', require: false
 
   gem 'rollbar'
   gem 'simple_form'
 
-  #gem 'streamio-ffmpeg', github: 'streamio/streamio-ffmpeg', branch: :master
+  # gem 'streamio-ffmpeg', github: 'streamio/streamio-ffmpeg', branch: :master
 
   # gem 'blueprint-rails', path: '/home/hron/Projects/contrib/blueprint-rails'
 
-  gem 'twitter-bootstrap-rails'
+  # gem 'twitter-bootstrap-rails'
 
   gem 'imgkit'
   gem 'wkhtmltoimage-binary' if RUBY_PLATFORM.match?(/linux|darwin/)

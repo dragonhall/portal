@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Fusion::User < ApplicationRecord
   extend Fusion::Base
 
@@ -17,10 +19,9 @@ class Fusion::User < ApplicationRecord
   end
 
   def groups
-    ids = self.attributes['user_groups'].split('.').compact
+    ids = attributes['user_groups'].split('.').compact
     ids.delete('')
 
     ids.map { |g| Fusion::Group.find(g) }
   end
-
 end

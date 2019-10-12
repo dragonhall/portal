@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -51,12 +53,12 @@ Rails.application.configure do
   config.log_level = :debug
 
   # Prepend all log lines with the following tags.
-  config.log_tags = [ :request_id ]
+  config.log_tags = [:request_id]
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
   config.cache_store = :redis_store, "#{Redis.current}/#{Rails.env}_cache", { expires_in: 60.minutes }
-  config.session_store :redis_store, 
+  config.session_store :redis_store,
                        servers: ["#{Redis.current}/#{Rails.env}_sessions"],
                        expire_after: 90.minutes,
                        key: "_#{Rails.application.class.parent_name.downcase}_session",
@@ -88,7 +90,7 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  if ENV["RAILS_LOG_TO_STDOUT"].present?
+  if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)

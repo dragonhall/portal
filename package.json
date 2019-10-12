@@ -1,5 +1,42 @@
 {
-  "name": "DHPortal",
+  "name": "dh-portal",
   "private": true,
-  "dependencies": {}
+  "scripts": {
+    "lint": "eslint app/webpack",
+    "test": "mocha-webpack --webpack-config=config/webpack/test.js 'spec/javascript/**/*.spec.ts'",
+    "watch": "mocha-webpack --webpack-config=config/webpack/test.js --watch 'spec/javascript/**/*.spec.ts'"
+  },
+  "dependencies": {
+    "@angular/common": "^8.2.10",
+    "@angular/compiler": "^8.2.10",
+    "@angular/core": "^8.2.10",
+    "@angular/platform-browser": "^8.2.10",
+    "@angular/platform-browser-dynamic": "^8.2.10",
+    "@rails/webpacker": "^4.0.7",
+    "core-js": "^3.2.1",
+    "rxjs": "^6.5.3",
+    "ts-loader": "^6.2.0",
+    "typescript": "^3.6.4",
+    "zone.js": "^0.10.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.3",
+    "@types/mocha": "^5.2.7",
+    "@typescript-eslint/eslint-plugin": "^2.3.3",
+    "@typescript-eslint/parser": "^2.3.3",
+    "chai": "^4.2.0",
+    "eslint": ">=6.2.2",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-angular": "^4.0.1",
+    "eslint-plugin-import": ">=2.18.0",
+    "eslint-plugin-node": ">=9.1.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": ">=4.2.1",
+    "eslint-plugin-standard": ">=4.0.0",
+    "mocha": "^6.2.1",
+    "mocha-webpack": "^2.0.0-beta.0",
+    "prettier": "^1.18.2",
+    "webpack-dev-server": "^3.8.2"
+  }
 }

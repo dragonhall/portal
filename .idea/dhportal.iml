@@ -187,6 +187,9 @@
     <orderEntry type="library" scope="PROVIDED" name="rspec-rails (v3.9.0, RVM: ruby-2.6.3 [dhportal]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-support (v3.9.0, RVM: ruby-2.6.3 [dhportal]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop (v0.75.0, RVM: ruby-2.6.3 [dhportal]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop-performance (v1.5.0, RVM: ruby-2.6.3 [dhportal]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop-rails (v2.3.2, RVM: ruby-2.6.3 [dhportal]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop-rspec (v1.36.0, RVM: ruby-2.6.3 [dhportal]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.10.1, RVM: ruby-2.6.3 [dhportal]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-vips (v2.0.15, RVM: ruby-2.6.3 [dhportal]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby_dep (v1.5.0, RVM: ruby-2.6.3 [dhportal]) [gem]" level="application" />
@@ -222,5 +225,9 @@
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.4, RVM: ruby-2.6.3 [dhportal]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="wkhtmltoimage-binary (v0.12.5, RVM: ruby-2.6.3 [dhportal]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.2.0, RVM: ruby-2.6.3 [dhportal]) [gem]" level="application" />
+  </component>
+  <component name="RModuleSettingsStorage">
+    <LOAD_PATH number="0" />
+    <I18N_FOLDERS number="1" string0="$MODULE_DIR$/config/locales" />
   </component>
 </module>

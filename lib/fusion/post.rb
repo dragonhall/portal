@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Fusion::Post < ApplicationRecord
   extend Fusion::Base
 

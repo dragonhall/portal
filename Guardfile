@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
@@ -33,7 +35,6 @@ guard :bundler do
   # Assume files are symlinked from somewhere
   files.each { |file| watch(helper.real_path(file)) }
 end
-
 
 # Guard-Rails supports a lot options with default values:
 # daemon: false                        # runs the server as a daemon.
