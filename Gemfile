@@ -42,7 +42,7 @@ gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
 
-gem 'puma', '3.12.2'
+gem 'puma', '3.12.3'
 
 group :assets do
   # gem 'coffee-rails', '~> 4.2'
